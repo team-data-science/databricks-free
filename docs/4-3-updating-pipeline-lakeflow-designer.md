@@ -212,8 +212,9 @@ But now it gets more complicated. We want to combine both sources and create a t
 But with Assistant this is fairly easy. Use this prompt:
 
 ```
-Combine customers_with_percentile_rank and loyalty_tiers. Assign each customer to the tier with the highest percentile they qualify for (where percentile_rank >= percentile). Output: tier_name, min_spend_threshold (minimum spending in that tier), customer_count."
+Combine customers_with_percentile_rank and loyalty_tiers. Assign each customer to the tier with the highest percentile they qualify for (where percentile_rank >= percentile). Create an output: tier_name, min_spend_threshold (minimum spending in that tier), customer_count.
 ```
+
 
 Then send the prompt.
 
