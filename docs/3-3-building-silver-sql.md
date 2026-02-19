@@ -82,7 +82,7 @@ That was only a start with Databricks Assistant and cleaning our data.
 In the next step, let's try to do our type conversions with Databricks Assistant. You probably know, context is key when it comes to prompts. So let't use this clear instruction (again use `CMD` + `I`):
 
 ```
-Update these current columns in the select: customer_id should be STRING, unit_price should be a DECIMAL which makes sense for prices, and invoice_date should be a timestamp in the format M/d/yy H:mm
+Update these current columns in the select: customer_id should be STRING, unit_price should be a DECIMAL which makes sense for prices, and invoice_date should be a timestamp in the format M/d/yyyy H:mm
 ```
 
 This will create more or less what we need:
@@ -108,7 +108,7 @@ AS SELECT
   StockCode AS stock_code,
   Description AS description,
   Quantity AS quantity,
-  TO_TIMESTAMP(InvoiceDate, 'M/d/yy H:mm') AS invoice_date,
+  TO_TIMESTAMP(InvoiceDate, 'M/d/yyyy H:mm') AS invoice_date,
   CAST(UnitPrice AS DECIMAL(10,2)) AS unit_price,
   CAST(CustomerID AS STRING) AS customer_id,
   Country AS country,
@@ -152,7 +152,7 @@ AS SELECT
   StockCode AS stock_code,
   Description AS description,
   Quantity AS quantity,
-  TO_TIMESTAMP(InvoiceDate, 'M/d/yy H:mm') AS invoice_date,
+  TO_TIMESTAMP(InvoiceDate, 'M/d/yyyy H:mm') AS invoice_date,
   CAST(UnitPrice AS DECIMAL(10,2)) AS unit_price,
   CAST(CustomerID AS STRING) AS customer_id,
   Country AS country,
@@ -188,7 +188,7 @@ AS SELECT
   StockCode AS stock_code,
   Description AS description,
   Quantity AS quantity,
-  TO_TIMESTAMP(InvoiceDate, 'M/d/yy H:mm') AS invoice_date,
+  TO_TIMESTAMP(InvoiceDate, 'M/d/yyyy H:mm') AS invoice_date,
   CAST(UnitPrice AS DECIMAL(10,2)) AS unit_price,
   CAST(CustomerID AS STRING) AS customer_id,
   Country AS country,
@@ -259,7 +259,7 @@ AS SELECT
   StockCode AS stock_code,
   Description AS description,
   Quantity AS quantity,
-  TO_TIMESTAMP(InvoiceDate, 'M/d/yy H:mm') AS invoice_date,
+  TO_TIMESTAMP(InvoiceDate, 'M/d/yyyy H:mm') AS invoice_date,
   CAST(UnitPrice AS DECIMAL(10,2)) AS unit_price,
   CAST(CustomerID AS STRING) AS customer_id,
   Country AS country,
